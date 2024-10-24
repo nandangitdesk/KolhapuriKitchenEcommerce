@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+
+.scrollbar-hide {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+}
+
+/* In your CSS file */
+.step-label {
+  color: rgba(0, 0, 0, 0.5); /* Default label text color */
+}
+
+.active-step .MuiStepLabel-label {
+  color: #1976d2; /* Active step label color */
+  font-weight: 600;
+}
+
+.completed-step .MuiStepLabel-label {
+  color: green; /* Completed step label color */
+}
+
+/* Customizing icon colors */
+.active-step .MuiSvgIcon-root {
+  color: #1976d2 !important; /* Active icon color */
+}
+
+.completed-step .MuiSvgIcon-root {
+  color: green !important; /* Completed icon color */
+}
