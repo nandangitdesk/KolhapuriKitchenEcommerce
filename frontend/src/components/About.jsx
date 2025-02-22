@@ -1,120 +1,107 @@
-import React from 'react'
-import { RiLeafLine, RiHeartLine, RiEarthLine, RiSeedlingLine } from 'react-icons/ri';
-import MetaData from './layouts/MetaData'
-import Navbar from './layouts/Navbar'
-import logoImage from '../../public/banner3.webp'
-import teamImage from '../assets/images/teamkk.webp'
+import React from 'react';
+import { motion } from 'framer-motion';
+import MetaData from './layouts/MetaData';
+import Navbar from './layouts/Navbar';
 
-
-const values = [
-  { icon: <RiLeafLine className="w-6 h-6" />, title: 'Premium Quality', description: 'We source only the finest spices from around the world.' },
-  { icon: <RiHeartLine className="w-6 h-6" />, title: 'Passion for Flavor', description: 'We are dedicated to enhancing your culinary experiences.' },
-  { icon: <RiEarthLine className="w-6 h-6" />, title: 'Sustainability', description: 'We support sustainable farming practices and fair trade.' },
-  { icon: <RiSeedlingLine className="w-6 h-6" />, title: 'Innovation', description: 'We constantly explore new blends and flavors.' },
-]
-
-export default function About() {
+const About = () => {
   return (
-    <div className="min-h-screen bg-white">
-        <MetaData title="About" />
-        <Navbar />
-      {/* Hero Section */}
-      <section className="relative bg-black text-white mt-16 sm:mt-20 md:mt-24 lg:mt-28">
-        <div className="absolute inset-0">
-          <img
-            src={logoImage}
-            alt="Colorful Spices"
-            className="w-full h-full object-cover opacity-30"
+    <div className="min-h-screen bg-white flex items-center justify-center px-4 sm:px-6 lg:px-8 my-20">
+        <MetaData title="About us" />
+        <Navbar/>
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-4xl w-full space-y-12 text-center"
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="relative"
+        >
+          <img 
+            src="https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?cs=srgb&dl=pexels-nitin-arya-386173-1029141.jpg&fm=jpg" 
+            alt="Decorative header" 
+            className="w-full h-40 object-cover rounded-lg shadow-md"
           />
-        </div>
-        <div className="relative max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 md:py-20 lg:py-24 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">Spice Up Your World</h1>
-          <p className="mt-4 sm:mt-6 max-w-3xl text-base sm:text-lg md:text-xl">
-            Discover the rich flavors and aromas of our premium spices, sourced from the finest regions across the globe.
-          </p>
-        </div>
-      </section>
-
-      {/* Our Story Section */}
-      <section className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 md:py-20 lg:py-24 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-red-800">Our Spice Journey</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-zinc-700">
-          Our story starts in the heart of Kolhapur, a region known for its rich culinary heritage. Inspired by age-old family recipes and a love for authentic flavors, we began our venture with a small, homemade masala business. The love and care that went into crafting each batch soon became the foundation of what would become Kolhapuri Kitchen.
-          </p>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 md:py-20 lg:py-24 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-red-800">Meet Our Spice Experts</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-zinc-700">
-              The passionate individuals who bring the world of spices to your kitchen.
-            </p>
-          </div>
-          <div className="mt-8 sm:mt-12">
-            <div className="h-48 sm:h-56 md:h-64 lg:h-72 rounded-lg overflow-hidden">
-              <img 
-                src={teamImage} 
-                alt="Our Spice Team" 
-                className="w-full h-full object-contain align-top"
-              />
+          <h1 className="absolute inset-0 flex items-center justify-center text-4xl sm:text-5xl font-extrabold text-white bg-black bg-opacity-50 rounded-lg">
+            About Book Land
+          </h1>
+        </motion.div>
+        
+        <motion.p 
+          className="mt-4 text-xl text-gray-600"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+        >
+          Your literary haven in the heart of Thane, Mumbai
+        </motion.p>
+        
+        <motion.div 
+          className="mt-8 space-y-6 text-lg text-gray-700"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
+          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+            <img 
+              src="https://images.pexels.com/photos/28845804/pexels-photo-28845804/free-photo-of-cozy-library-bookshelf-aisle-interior-view.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+              alt="Book Land Store" 
+              className="w-64 h-64 object-cover rounded-lg shadow-md"
+            />
+            <div className="flex-1 text-left">
+              <p>
+                Welcome to Book Land, where stories come to life and imagination knows no bounds. 
+                Nestled in the vibrant city of Thane, Mumbai, we've been serving book lovers since 2010.
+              </p>
+              <p className="mt-4">
+                Our passion for literature drives us to curate a diverse collection of books, 
+                from timeless classics to contemporary bestsellers. We believe in the power of words 
+                to inspire, educate, and transform lives.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 md:py-20 lg:py-24 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-red-800">Our Spice Philosophy</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-zinc-700">
-              The principles that guide our spice selection and business practices.
-            </p>
+          <div className="flex flex-col md:flex-row-reverse items-center space-y-4 md:space-y-0 md:space-x-8 md:space-x-reverse">
+            <img 
+              src="https://images.pexels.com/photos/29817994/pexels-photo-29817994/free-photo-of-dramatic-light-on-open-magazine-indoors.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+              alt="Reading Corner" 
+              className="w-64 h-64 object-cover rounded-lg shadow-md"
+            />
+            <div className="flex-1 text-left">
+              <p>
+                At Book Land, we're more than just a bookstore. We're a community of readers, 
+                a sanctuary for book enthusiasts, and a launchpad for literary adventures. 
+                Our knowledgeable staff is always ready to help you find your next great read or 
+                engage in thoughtful discussions about your favorite authors.
+              </p>
+              <p className="mt-4">
+                Whether you're a seasoned bibliophile or just beginning your reading journey, 
+                Book Land is your destination for literary exploration. Come, lose yourself in the 
+                world of books, and let your imagination soar.
+              </p>
+            </div>
           </div>
-          <div className="mt-8 sm:mt-12 grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((value, index) => (
-              <div key={index} className="bg-white overflow-hidden shadow rounded-lg">
-                <div className="p-4 sm:p-5">
-                  <div className="flex items-center">
-                    <div className="flex-shrink-0 bg-red-500 rounded-md p-2 sm:p-3 text-white">
-                      {value.icon}
-                    </div>
-                    <div className="ml-4 sm:ml-5 w-0 flex-1">
-                      <dl>
-                        <dt className="text-base sm:text-lg font-medium text-red-900 truncate">{value.title}</dt>
-                        <dd className="mt-2 text-sm sm:text-base text-zinc-700">{value.description}</dd>
-                      </dl>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="bg-black">
-        <div className="max-w-2xl mx-auto text-center py-12 px-4 sm:py-16 sm:px-6 md:py-20 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
-            <span className="block">Ready to spice up your cooking?</span>
-            <span className="block mt-2">Explore our exotic spice collection today.</span>
-          </h2>
-          <p className="mt-4 text-base sm:text-lg leading-6 text-zinc-400">
-            Discover a world of flavors and aromas to elevate your culinary creations.
+        </motion.div>
+        
+        <motion.div 
+          className="mt-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+        >
+          <h2 className="text-2xl font-bold text-gray-900">Visit Us</h2>
+          <p className="mt-2 text-gray-600">
+            123 Reader's Lane, Thane West<br />
+            Mumbai, Maharashtra 400601<br />
+            India
           </p>
-          <a
-            href="/products"
-            className="mt-8 w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-zinc-700 bg-white hover:bg-amber-50"
-          >
-            Shop Spices Now
-          </a>
-        </div>
-      </section>
+        </motion.div>
+      </motion.div>
     </div>
-  )
-}
+  );
+};
+
+export default About;
+
