@@ -6,11 +6,11 @@ import Navbar from './layouts/Navbar'
 import Carousel from './layouts/Carousel'
 import Testimonial from './Testimonial'
 import Footer from './layouts/Footer'
-import Player from './Player'
+
 import ProductCard from './layouts/ProductCard'
 import Loader from './layouts/Loader';
 import MetaData from './layouts/MetaData';
-import offerBanner from "../../public/offerbanner.webp"
+import offerBanner from "../../public/boostoreads.jpg"
 
 const Home = () => {
   const navigate = useNavigate();
@@ -34,11 +34,14 @@ const Home = () => {
 
   return (
     <>
-      <MetaData title="Home" />
+        <MetaData title="BookLand | Home"  />
       {loading ? <Loader /> : (
         <div className='min-h-screen w-full'>
           <Navbar />
-          <form onSubmit={searchSubmitHandler} className='search-bar mt-[3rem] md:mt-[5.5rem] p-10 flex items-center justify-center'>
+          <div className='w-full mt-20'>
+            <Carousel />
+          </div>
+          <form onSubmit={searchSubmitHandler} className='search-bar  p-10 flex items-center justify-center'>
             <input  
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)} 
@@ -46,11 +49,9 @@ const Home = () => {
               placeholder='Search here...' 
               className='border border-gray-300 outline-none rounded-l-full px-4 py-2 w-[20rem] sm:w-[16rem]' 
             />
-            <button className='bg-red-600 text-white rounded-r-full px-4 py-2'>Search</button>
+            <button className='bg-[#111418] text-white rounded-r-full px-4 py-2'>Search</button>
           </form>
-          <div className='w-full'>
-            <Carousel />
-          </div>
+         
           <div id='products' className='w-full mt-10'>
             <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center'>Featured Products</h2>
             <div className='flex items-center justify-start space-x-4 overflow-x-auto p-4 md:flex-wrap md:justify-between md:px-20 scrollbar-hide'>
@@ -68,21 +69,13 @@ const Home = () => {
           <div className='offerbanner w-full h-full px-4 sm:px-6 md:px-8 rounded-lg mt-10'>
             <Link to="/products"> <img  src={offerBanner} alt="offerbanner" className='w-full h-auto object-cover rounded-lg' /></Link>
           </div>
-          <div className='w-full h-full mt-20 px-8 '>
-            <h1 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center mb-4 sm:mb-6'>
-              <i className="ri-bard-fill text-red-500 mr-2"></i>
-              Celebrate the Journey with Us
-            </h1>
-            <div className="w-full ">
-              <Player />
-            </div>
-          </div>
+         
           <div className='testimonial w-full h-full mt-20 px-8'>
-            <h1 className='text-xl '>Some Of Our Clients <br />Saying About Us <i className="ri-bard-fill text-red-500 mr-2"></i></h1>
+            <h1 className='text-xl '>Some Of Our Clients <br />Saying About Us <i className="ri-bard-fill text-[#111418] mr-2"></i></h1>
             <Testimonial />
           </div>
           <div className='footer w-full h-full mt-10'>
-            <h1 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center'>WHY CHOOSE US ?</h1>
+            
             <Footer />
           </div>
         </div>

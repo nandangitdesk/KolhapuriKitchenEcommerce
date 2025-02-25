@@ -46,7 +46,7 @@ const Cart = () => {
         <div className='cartPage text-black mt-24 bg-white shadow-md rounded-lg p-4 max-w-5xl mx-auto'>
           <Navbar />
           <MetaData title="Cart" />
-          <h1 className='mt-4 text-center font-bold text-red-500 text-3xl mb-10'>My Cart</h1>
+          <h1 className='mt-4 text-center font-bold text-[#000000] text-3xl mb-10'>My Cart</h1>
           <div className='cartHeader flex justify-between items-center mb-4 md:flex-row md:justify-between bg-zinc-200 p-4 text-black'>
             <p className='md:text-xl font-semibold mb-2 md:mb-0'>Product</p>
             <p className='md:text-xl font-semibold mb-2 md:mb-0'>Quantity</p>
