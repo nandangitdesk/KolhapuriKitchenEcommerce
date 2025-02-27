@@ -21,8 +21,8 @@ router.post("/process/payment", isAuthenticatedUser ,  (req, res) => {
       firstname: name,
       email,
       phone,
-      surl: `https://bookland-2tkd.onrender.com//api/v1/payment/success`,
-      furl: "https://bookland-2tkd.onrender.com//api/v1/payment/failure",
+      surl: `https://bookland-2tkd.onrender.com/api/v1/payment/success`,
+      furl: "https://bookland-2tkd.onrender.com/api/v1/payment/failure",
     };
 
     const hashString = `${payuConfig.key}|${payuConfig.txnid}|${payuConfig.amount}|${payuConfig.productinfo}|${payuConfig.firstname}|${payuConfig.email}|||||||||||${payuConfig.salt}`;
@@ -66,10 +66,10 @@ router.post("/payment/success", async (req, res) => {
       console.log(`Order updated for txnid: ${txnid}`);
 
       // Redirect to the frontend success page
-      return res.redirect(`https://bookland-2tkd.onrender.com//payment/success?txnid=${txnid}`);
+      return res.redirect(`https://bookland-2tkd.onrender.com/payment/success?txnid=${txnid}`);
     } else {
       console.log("Payment failed or pending.");
-      return res.redirect("https://bookland-2tkd.onrender.com//payment/failure");
+      return res.redirect("https://bookland-2tkd.onrender.com/payment/failure");
     }
   } catch (error) {
     console.error("Error in payment success handling:", error);
@@ -82,7 +82,7 @@ router.post("/payment/failure", (req, res) => {
   console.log("Payment Failure:", req.body);
   // Handle the failed payment
   // Update order status in your database
-  res.redirect("https://bookland-2tkd.onrender.com//payment/failure");
+  res.redirect("https://bookland-2tkd.onrender.com/payment/failure");
 });
 
 module.exports = router;
