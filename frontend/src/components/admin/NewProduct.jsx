@@ -23,7 +23,7 @@ const NewProduct = () => {
     const [images, setImages] = useState([])
     const [imagesPreview, setImagesPreview] = useState([])
 
-    const Categories = ["Spices", "Flour"]
+    const Categories = ["Sci Fiction", "Fiction","Fantasy","Mystery","Thriller","Romance","Horror","Biography","Travel","History","Science","Art","Comics","Religion","Others"]
 
     useEffect(() => {
         if (error) {

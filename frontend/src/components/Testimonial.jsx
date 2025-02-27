@@ -41,27 +41,27 @@ const Testimonial = () => {
     <div className="w-full h-full mt-10 overflow-x-auto scrollbar-hide">
       <div className="flex items-center gap-6 pb-10 md:justify-between">
         {testimonials.map((testimonial) => (
-          <div key={testimonial.id} className="w-[280px] md:w-[19rem] h-[17rem] p-4 bg-gradient-to-b from-gray-500 to-[#111418] rounded-xl flex-shrink-0 flex flex-col">
+          <div key={testimonial.id} className="w-[280px] md:w-[19rem] h-[17rem] p-4 border border-dashed border-[#111418] rounded-xl flex-shrink-0 flex flex-col">
             <div className="flex items-center justify-between">
               <div className="flex items-center justify-center">
                 <i className="ri-double-quotes-l text-2xl"></i>
-                <i className="ri-double-quotes-l text-[5rem] text-white opacity-40"></i>
+                <i className="ri-double-quotes-l text-[5rem] text-zinc-300 opacity-40"></i>
               </div>
               <div className="flex items-center justify-between flex-col">
                 <div className="h-20 w-20 rounded-full">
                   <img className="h-full w-full object-cover rounded-full" src={testimonial.image} alt="Testimonial" />
                 </div>
                 <div className="flex items-center justify-between">
-                  <i className="ri-star-s-fill text-white"></i>
-                  <i className="ri-star-s-fill text-white"></i>
-                  <i className="ri-star-s-fill text-white"></i>
-                  <i className="ri-star-s-fill text-white"></i>
-                  <i className="ri-star-s-fill text-white"></i>
+                  <i className="ri-star-s-fill text-[#111418]"></i>
+                  <i className="ri-star-s-fill text-[#111418]"></i>
+                  <i className="ri-star-s-fill text-[#111418]"></i>
+                  <i className="ri-star-s-fill text-[#111418]"></i>
+                  <i className="ri-star-s-fill text-[#111418]"></i>
                 </div>
               </div>
             </div>
             <div className="mt-4">
-              <p className="text-xs text-white opacity-85">
+              <p className="text-xs text-[#111418] opacity-85">
                 {testimonial.description}
               </p>
             </div>
