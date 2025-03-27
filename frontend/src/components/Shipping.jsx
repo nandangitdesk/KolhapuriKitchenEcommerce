@@ -66,11 +66,8 @@ const Shipping = () => {
                   required
                 >
                   <option value="">Select Country</option>
-                  {Country.getAllCountries().map((country) => (
-                    <option key={country.isoCode} value={country.isoCode}>
-                      {country.name}
-                    </option>
-                  ))}
+                  <option value="IN">India</option>
+                  
                 </select>
                 <label htmlFor="state" className="text-lg font-medium mb-2">State:</label>
                 <select
@@ -109,7 +106,7 @@ const Shipping = () => {
                 <label htmlFor="pinCode" className="text-lg font-medium mb-2">Pin Code:</label>
                 <input
                   id="pinCode"
-                  type="text"
+                  type="number"
                   value={pinCode}
                   onChange={(e) => setPinCode(e.target.value)}
                   className="w-full p-2 mb-5 border border-gray-400 rounded-lg"
@@ -118,7 +115,7 @@ const Shipping = () => {
                 <label htmlFor="phoneNo" className="text-lg font-medium mb-2">Phone No:</label>
                 <input
                   id="phoneNo"
-                  type="text"
+                  type="number"
                   value={phoneNo}
                   onChange={(e) => setPhoneNo(e.target.value)}
                   className="w-full p-2 mb-5 border border-gray-400 rounded-lg"
